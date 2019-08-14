@@ -25,20 +25,20 @@ public class WebServiceConfig {
 		return new ServletRegistrationBean(messageDispatcherServlet, "/ws/*");
 	}
 	
-	@Bean(name="students")
-	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema studentSchema) {
+	@Bean(name="notesWS")
+	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema noteSchema) {
 		
 		DefaultWsdl11Definition defaultWsdl11Definition = new DefaultWsdl11Definition();
-		defaultWsdl11Definition.setPortTypeName("StudentPort");
-		defaultWsdl11Definition.setTargetNamespace("http:localhost:8080/students");
+		defaultWsdl11Definition.setPortTypeName("NotePort");
+		defaultWsdl11Definition.setTargetNamespace("http://carledwinti.com/notes");
 		defaultWsdl11Definition.setLocationUri("/ws");
-		defaultWsdl11Definition.setSchema(studentSchema);
+		defaultWsdl11Definition.setSchema(noteSchema);
 		
 		return defaultWsdl11Definition;
 	}
 	
 	@Bean
 	public XsdSchema studentsSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("students-details.xsd"));
+		return new SimpleXsdSchema(new ClassPathResource("notes-details.xsd"));
 	}
 }

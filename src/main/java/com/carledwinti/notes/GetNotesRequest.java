@@ -2,11 +2,11 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2019.08.14 às 10:06:29 AM BRT 
+// Gerado em: 2019.08.14 às 01:40:45 PM BRT 
 //
 
 
-package com.carledwinti.students;
+package com.carledwinti.notes;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="StudentDetails" type="{http://carledwinti.com/students}StudentDetails"/>
+ *         &lt;element name="user" type="{http://carledwinti.com/notes}User"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "studentDetails"
+    "user"
 })
-@XmlRootElement(name = "GetStudentDetailsResponse")
-public class GetStudentDetailsResponse {
+@XmlRootElement(name = "GetNotesRequest")
+public class GetNotesRequest {
 
-    @XmlElement(name = "StudentDetails", required = true)
-    protected StudentDetails studentDetails;
+    @XmlElement(required = true)
+    protected User user;
 
     /**
-     * Obtém o valor da propriedade studentDetails.
+     * Obtém o valor da propriedade user.
      * 
      * @return
      *     possible object is
-     *     {@link StudentDetails }
+     *     {@link User }
      *     
      */
-    public StudentDetails getStudentDetails() {
-        return studentDetails;
+    public User getUser() {
+        return user;
     }
 
     /**
-     * Define o valor da propriedade studentDetails.
+     * Define o valor da propriedade user.
      * 
      * @param value
      *     allowed object is
-     *     {@link StudentDetails }
+     *     {@link User }
      *     
      */
-    public void setStudentDetails(StudentDetails value) {
-        this.studentDetails = value;
+    public void setUser(User value) {
+        this.user = value;
     }
 
 }

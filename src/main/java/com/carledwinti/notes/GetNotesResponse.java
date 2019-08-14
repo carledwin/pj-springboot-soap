@@ -2,14 +2,15 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2019.08.14 às 10:06:29 AM BRT 
+// Gerado em: 2019.08.14 às 01:40:45 PM BRT 
 //
 
 
-package com.carledwinti.students;
+package com.carledwinti.notes;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="Note" type="{http://carledwinti.com/notes}Note"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,27 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "id"
+    "note"
 })
-@XmlRootElement(name = "GetStudentDetailsRequest")
-public class GetStudentDetailsRequest {
+@XmlRootElement(name = "GetNotesResponse")
+public class GetNotesResponse {
 
-    protected int id;
+    @XmlElement(name = "Note", required = true)
+    protected Note note;
 
     /**
-     * Obtém o valor da propriedade id.
+     * Obtém o valor da propriedade note.
      * 
+     * @return
+     *     possible object is
+     *     {@link Note }
+     *     
      */
-    public int getId() {
-        return id;
+    public Note getNote() {
+        return note;
     }
 
     /**
-     * Define o valor da propriedade id.
+     * Define o valor da propriedade note.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Note }
+     *     
      */
-    public void setId(int value) {
-        this.id = value;
+    public void setNote(Note value) {
+        this.note = value;
     }
 
 }

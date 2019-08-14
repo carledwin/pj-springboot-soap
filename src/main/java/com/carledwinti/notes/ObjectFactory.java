@@ -2,11 +2,11 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.7 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2019.08.14 às 10:06:29 AM BRT 
+// Gerado em: 2019.08.14 às 01:40:45 PM BRT 
 //
 
 
-package com.carledwinti.students;
+package com.carledwinti.notes;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.carledwinti.students package. 
+ * generated in the com.carledwinti.notes package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,34 +30,42 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.carledwinti.students
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.carledwinti.notes
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetStudentDetailsResponse }
+     * Create an instance of {@link GetNotesRequest }
      * 
      */
-    public GetStudentDetailsResponse createGetStudentDetailsResponse() {
-        return new GetStudentDetailsResponse();
+    public GetNotesRequest createGetNotesRequest() {
+        return new GetNotesRequest();
     }
 
     /**
-     * Create an instance of {@link StudentDetails }
+     * Create an instance of {@link User }
      * 
      */
-    public StudentDetails createStudentDetails() {
-        return new StudentDetails();
+    public User createUser() {
+        return new User();
     }
 
     /**
-     * Create an instance of {@link GetStudentDetailsRequest }
+     * Create an instance of {@link GetNotesResponse }
      * 
      */
-    public GetStudentDetailsRequest createGetStudentDetailsRequest() {
-        return new GetStudentDetailsRequest();
+    public GetNotesResponse createGetNotesResponse() {
+        return new GetNotesResponse();
+    }
+
+    /**
+     * Create an instance of {@link Note }
+     * 
+     */
+    public Note createNote() {
+        return new Note();
     }
 
 }
