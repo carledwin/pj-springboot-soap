@@ -1,4 +1,4 @@
-package com.carledwinti.springboot.soap.pjspringbootsoap.model;
+package com.carledwinti.springboot.soap.model;
 
 public class Note {
 

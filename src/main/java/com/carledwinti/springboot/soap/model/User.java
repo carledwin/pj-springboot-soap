@@ -1,6 +1,6 @@
-package com.carledwinti.springboot.soap.pjspringbootsoap.model;
+package com.carledwinti.springboot.soap.model;
 
-import com.carledwinti.springboot.soap.pjspringbootsoap.enums.DocumentType;
+import com.carledwinti.springboot.soap.enums.DocumentType;
 
 public class User {
 

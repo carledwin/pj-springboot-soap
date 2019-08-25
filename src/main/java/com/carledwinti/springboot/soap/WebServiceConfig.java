@@ -1,4 +1,4 @@
-package com.carledwinti.springboot.soap.pjspringbootsoap;
+package com.carledwinti.springboot.soap;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

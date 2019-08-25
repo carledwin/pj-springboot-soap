@@ -1,4 +1,4 @@
-package com.carledwinti.springboot.soap.pjspringbootsoap.endpoint;
+package com.carledwinti.springboot.soap.endpoint;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -6,7 +6,6 @@ import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
-import org.springframework.ws.transport.WebServiceConnection;
 import org.springframework.ws.transport.context.TransportContext;
 import org.springframework.ws.transport.context.TransportContextHolder;
 import org.springframework.ws.transport.http.HttpServletConnection;
@@ -56,7 +55,7 @@ public class NotesDetailsEndpoint {
 		user.setName("Fulano de Tal");
 		user.setAge(36);
 		user.setDocument(12345678901l);
-		user.setDocumentType(com.carledwinti.springboot.soap.pjspringbootsoap.enums.DocumentType.CPF.toString());
+		user.setDocumentType(com.carledwinti.springboot.soap.enums.DocumentType.CPF.toString());
 		
 		note.setUser(user);
 		

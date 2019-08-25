@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://carledwinti.com/notes}Note"/>
- *         &lt;element ref="{http://carledwinti.com/notes}Fault"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -37,63 +37,54 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "note",
-    "fault"
+    "message",
+    "code"
 })
-@XmlRootElement(name = "GetNotesResponse")
-public class GetNotesResponse {
+@XmlRootElement(name = "Fault")
+public class Fault {
 
-    @XmlElement(name = "Note", required = true)
-    protected Note note;
-    @XmlElement(name = "Fault", required = true)
-    protected Fault fault;
+    @XmlElement(required = true)
+    protected String message;
+    protected int code;
 
     /**
-     * Gets the value of the note property.
+     * Gets the value of the message property.
      * 
      * @return
      *     possible object is
-     *     {@link Note }
+     *     {@link String }
      *     
      */
-    public Note getNote() {
-        return note;
+    public String getMessage() {
+        return message;
     }
 
     /**
-     * Sets the value of the note property.
+     * Sets the value of the message property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Note }
+     *     {@link String }
      *     
      */
-    public void setNote(Note value) {
-        this.note = value;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
     /**
-     * Gets the value of the fault property.
+     * Gets the value of the code property.
      * 
-     * @return
-     *     possible object is
-     *     {@link Fault }
-     *     
      */
-    public Fault getFault() {
-        return fault;
+    public int getCode() {
+        return code;
     }
 
     /**
-     * Sets the value of the fault property.
+     * Sets the value of the code property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link Fault }
-     *     
      */
-    public void setFault(Fault value) {
-        this.fault = value;
+    public void setCode(int value) {
+        this.code = value;
     }
 
 }

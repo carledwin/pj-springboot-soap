@@ -7,7 +7,7 @@ xmlns:tns="http://carledwinti.com/notes" elementFormDefault="qualified">
 	<xs:element name="GetNotesRequest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name= "user" type="tns:User"/>
+				<xs:element ref="tns:User"/>
 			</xs:sequence>	
 		</xs:complexType>
 	</xs:element>
@@ -15,12 +15,14 @@ xmlns:tns="http://carledwinti.com/notes" elementFormDefault="qualified">
 	<xs:element name="GetNotesResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name= "Note" type="tns:Note"/>
+				<xs:element ref="tns:Note"/>
+				<xs:element ref="tns:Fault"/>
 			</xs:sequence>	
 		</xs:complexType>
 	</xs:element>
 	
-	<xs:complexType name="User">
+	<xs:element name="User">
+	<xs:complexType>
 		<xs:sequence>
 			<xs:element name="name" type="xs:string"/>
 			<xs:element name="age" type="xs:int"/>
@@ -28,12 +30,33 @@ xmlns:tns="http://carledwinti.com/notes" elementFormDefault="qualified">
 			<xs:element name="documentType" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Authorization">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="username" type="xs:string"/>
+			<xs:element name="password" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
 
-	<xs:complexType name="Note">
+<xs:element name="Note">
+	<xs:complexType>
 		<xs:sequence>
 			<xs:element name="description" type="xs:string"/>
 			<xs:element name="value" type="xs:int"/>
-			<xs:element name="user" type="tns:User"/>
+			<xs:element ref="tns:User"/>
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Fault">
+		<xs:complexType>
+		<xs:sequence>
+			<xs:element name="message" type="xs:string"/>
+			<xs:element name="code" type="xs:int"/>
 		</xs:sequence>
 	</xs:complexType>	
+	</xs:element>	
 </xs:schema>
