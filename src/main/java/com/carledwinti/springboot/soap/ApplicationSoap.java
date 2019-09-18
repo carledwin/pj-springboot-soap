@@ -9,7 +9,7 @@ public class ApplicationSoap {
 	public static void main(String[] args) {
 		SpringApplication.run(ApplicationSoap.class, args);
 		
-		System.out.println("Access the WSDL in http://localhost:8082/ws/notes.wsdl");
+		System.out.println("Access the WSDL in http://localhost:8082/ws/notesWS.wsdl");
 	}
 
 }

@@ -38,11 +38,10 @@ public class NotesDetailsEndpoint {
 			doThrow("Request não encontrada!");
 		}
 		
-		String username = httpServletRequest.getHeader("username");
-		String password = httpServletRequest.getHeader("password");
+		String clientId = httpServletRequest.getHeader("clientId");
 		
-		if((username == null || password == null) || (!"fulano".equals(username) || !"senha".equals(password))) {
-			doThrow("Header inválido!");
+		if((clientId == null) || (!"a65@ia".equals(clientId))) {
+			doThrow("Header clientId inválido!");
 		}
 		
 		GetNotesResponse getNotesResponse = new GetNotesResponse();

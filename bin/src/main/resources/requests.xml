@@ -1,0 +1,132 @@
+
+WSDL
+http://localhost:8080/ws/notesWS.wsdl
+
+URL
+http://localhost:8080/ws
+
+REQUEST
+<soapenv:Envelope
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:not="http://carledwinti.com/notes">
+	<soapenv:Header />
+	<soapenv:Body>
+		<not:GetNotesRequest>
+			<not:user>
+				<not:name>Fulano</not:name>
+				<not:age>36</not:age>
+				<not:document>234</not:document>
+				<not:documentType>CPF</not:documentType>
+			</not:user>
+		</not:GetNotesRequest>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+RESPONSE
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header />
+	<SOAP-ENV:Body>
+		<ns2:GetNotesResponse
+			xmlns:ns2="http://carledwinti.com/notes">
+			<ns2:Note>
+				<ns2:description>Ótima Nota</ns2:description>
+				<ns2:value>10</ns2:value>
+				<ns2:user>
+					<ns2:name>Fulano de Tal</ns2:name>
+					<ns2:age>36</ns2:age>
+					<ns2:document>12345678901</ns2:document>
+					<ns2:documentType>CPF</ns2:documentType>
+				</ns2:user>
+			</ns2:Note>
+		</ns2:GetNotesResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+
+
+**************************************************
+
+This XML file does not
+appear to have any style information associated with it. The document
+tree is shown below.
+<wsdl:definitions
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:sch="http://carledwinti.com/notes"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://carledwinti.com/notes"
+	targetNamespace="http://carledwinti.com/notes">
+	<wsdl:types>
+		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			elementFormDefault="qualified"
+			targetNamespace="http://carledwinti.com/notes">
+			<xs:element name="GetNotesRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="user" type="tns:User" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetNotesResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Note" type="tns:Note" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:complexType name="User">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" />
+					<xs:element name="age" type="xs:int" />
+					<xs:element name="document" type="xs:long" />
+					<xs:element name="documentType" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="Note">
+				<xs:sequence>
+					<xs:element name="description" type="xs:string" />
+					<xs:element name="value" type="xs:int" />
+					<xs:element name="user" type="tns:User" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="GetNotesRequest">
+		<wsdl:part element="tns:GetNotesRequest"
+			name="GetNotesRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetNotesResponse">
+		<wsdl:part element="tns:GetNotesResponse"
+			name="GetNotesResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="NotePort">
+		<wsdl:operation name="GetNotes">
+			<wsdl:input message="tns:GetNotesRequest"
+				name="GetNotesRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetNotesResponse"
+				name="GetNotesResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="NotePortSoap11" type="tns:NotePort">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetNotes">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetNotesRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetNotesResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="NotePortService">
+		<wsdl:port binding="tns:NotePortSoap11"
+			name="NotePortSoap11">
+			<soap:address location="http://localhost:8080/ws" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
